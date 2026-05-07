@@ -1,5 +1,5 @@
 // =====================================================================
-// web_ui.h — single PROGMEM HTML page for mesh node web UI
+// web_ui.h
 // 3 tabs: Chat / Topology / Health
 // =====================================================================
 #pragma once
