@@ -291,6 +291,7 @@ static void printHelp()
   Serial.println(F("Commands:"));
   Serial.println(F("  /help                  show commands"));
   Serial.println(F("  /id                    show this node id"));
+  Serial.println(F("  /ip                    show AP and station IPs"));
   Serial.println(F("  /list                  list known nodes"));
   Serial.println(F("  /broadcast <text>      send chat to all"));
   Serial.println(F("  /dm <id> <text>        direct message a node"));
@@ -307,6 +308,12 @@ static void handleCommand(const String &line)
   }
   else if (s == "/id") {
     Serial.printf("id=%u name=%s\n", mesh.getNodeId(), nodeName.c_str());
+  }
+  else if (s == "/ip") {
+    Serial.print("AP IP: ");
+    Serial.println(mesh.getAPIP());
+    Serial.print("STA IP: ");
+    Serial.println(mesh.getStationIP());
   }
   else if (s == "/list") {
     Lock l;
